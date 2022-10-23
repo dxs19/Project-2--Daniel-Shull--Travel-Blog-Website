@@ -18,6 +18,11 @@ function App() {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    console.log(formState)
+    let createNewTrip = await axios.post('http://localhost:3001/countries', formState)
+  }
   return (
     <div className="App">
       <h1>Write your experience here.</h1>
@@ -27,7 +32,7 @@ function App() {
         </div>
       ))}
       <h3>Add Another Trip:</h3>
-      <from>
+      <form onSubmit={handleSubmit}>
         <label htmlFor='name'>Country Name:</label>
         <input id='name' value={formState.name} onChange={handleChange} />
         <label htmlFor='city'>City:</label>
@@ -39,7 +44,7 @@ function App() {
         <label htmlFor='rating'>Rating:</label>
         <input id='rating' value={formState.rating} onChange={handleChange} />
         <button type='submit'>Add Trip</button>
-      </from>
+      </form>
     </div>
   );
 }
