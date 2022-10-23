@@ -36,7 +36,10 @@ function App() {
       <h1>Write your experience here.</h1>
       {countries.map((country) => (
         <div key={country._id}>
-          <h2>{country.name} </h2>
+          <h2>{country.city},{country.name}</h2>
+          <h3>{country.price}</h3>
+          <h3>{country.description}</h3>
+          <h3>{country.rating}</h3>
         </div>
       ))}
       <h3>Add Another Trip:</h3>
