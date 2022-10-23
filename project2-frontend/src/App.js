@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function App() {
   const [countries, updateCountries] = useState([])
-
+  const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '' })
 
   useEffect(() => {
     const apiCall = async () => {
@@ -14,6 +14,10 @@ function App() {
     apiCall()
   }, [])
 
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
+
   return (
     <div className="App">
       <h1>Write your experience here.</h1>
@@ -22,7 +26,20 @@ function App() {
           <h2>{country.name} </h2>
         </div>
       ))}
-      <h3>Add Another Trip</h3>
+      <h3>Add Another Trip:</h3>
+      <from>
+        <label htmlFor='name'>Country Name:</label>
+        <input id='name' value={formState.name} onChange={handleChange} />
+        <label htmlFor='city'>City:</label>
+        <input id='city' value={formState.city} onChange={handleChange} />
+        <label htmlFor='price'>Price of Trip:</label>
+        <input id='price' value={formState.price} onChange={handleChange} />
+        <label htmlFor='description'>Description of Trip:</label>
+        <input id='description' value={formState.description} onChange={handleChange} />
+        <label htmlFor='rating'>Rating:</label>
+        <input id='rating' value={formState.rating} onChange={handleChange} />
+        <button type='submit'>Add Trip</button>
+      </from>
     </div>
   );
 }
