@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose
-    .connect('mongodb+srv://dxs19:stella@project2-database.cgkpxwu.mongodb.net/project2')
+    .connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Sucessfully connected to MongoDB.')
     })
