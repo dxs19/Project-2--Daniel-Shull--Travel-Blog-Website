@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
 app.use(express.json())
 
 //Country Routes
+//read all brands ---> GET
+app.get('/countries', async (req, res) => {
+    let allCountries = await Country.find({})
+    res.json(allCountries)
+})
 
 // create country
 app.post('/countries', async (req, res) => {
@@ -18,6 +23,14 @@ app.post('/countries', async (req, res) => {
     res.send(createdCountry)
 })
 
+//Products
+
+
+
+
 app.listen(PORT, () => [
     console.log(`Express server is running:${PORT}`)
 ])
+
+
+

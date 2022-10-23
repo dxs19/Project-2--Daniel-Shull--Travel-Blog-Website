@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose
-    .connect('mongodb+srv://dxs19:stella@cluster0.exiesoz.mongodb.net/project2')
+    .connect('mongodb+srv://dxs19:stella@project2-database.cgkpxwu.mongodb.net/project2')
     .then(() => {
         console.log('Sucessfully connected to MongoDB.')
     })
