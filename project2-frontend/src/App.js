@@ -22,6 +22,14 @@ function App() {
     event.preventDefault()
     console.log(formState)
     let createNewTrip = await axios.post('http://localhost:3001/countries', formState)
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    updateCountries([...countries, createNewTrip.data])
+    setFormState({ name: '', city: '', price: '', description: '', rating: '' })
   }
   return (
     <div className="App">
