@@ -7,6 +7,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  text-align: center;
+}
+
+.country-list {
+  font-size: medium;
+
+}
+
+.labels {
+  display: grid;
+  font-size: large;
+  width: 30vh;
+  padding: 3vh;
+}
+
+.description {
+  height: 15vh;
+}
+
+.trip-button {
+  margin-top: 3vh;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
