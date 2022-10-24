@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom"
 const Home = (props) => {
     return (<div >
 
-        <button onClick={
-            useNavigate("/flags")}
+        <button onClick={props.navigateToFlags}
         ></button>
         <h1>Write your experience here.</h1>
         {props.countries.map((country) => (

@@ -26,6 +26,12 @@ app.post('/countries', async (req, res) => {
     res.send(createdCountry)
 })
 
+//update country
+
+//delete country
+
+
+
 
 app.listen(PORT, () => [
     console.log(`Express server is running:${PORT}`)

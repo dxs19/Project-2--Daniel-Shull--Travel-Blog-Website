@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import react from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { useNavigate, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Flags from './Flags'
 
@@ -13,6 +13,15 @@ function App() {
 
   const [countries, updateCountries] = useState([])
   const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '' })
+  const navigate = useNavigate()
+
+  const navigateToFlags = () => {
+    navigate('/flags')
+  }
+  const navigateToHome = () => {
+    navigate('/')
+  }
+
 
   useEffect(() => {
     const apiCall = async () => {
@@ -43,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home countries={countries} handleChange={handleChange} handleSubmit={handleSubmit} formState={formState} />} />
+        <Route path="/" element={<Home countries={countries} handleChange={handleChange} handleSubmit={handleSubmit} formState={formState} navigate={navigate} navigateToFlags={navigateToFlags} navigateToHome={navigateToHome} />} />
         <Route path="/flags" element={<Flags />} />
 
       </Routes>
