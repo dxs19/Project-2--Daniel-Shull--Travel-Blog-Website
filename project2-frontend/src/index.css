@@ -16,6 +16,13 @@ h1 {
 
 }
 
+.trip {
+  padding-top: 4vh;
+  font-size: 25px;
+  ;
+
+}
+
 .labels {
   display: grid;
   font-size: large;

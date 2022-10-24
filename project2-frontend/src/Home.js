@@ -15,7 +15,7 @@ const Home = (props) => {
                 </div>
             ))
         }
-        <h3>Add Another Trip:</h3>
+        <h3 class="trip">Add Another Trip:</h3>
         <form onSubmit={props.handleSubmit} class="labels">
             <label htmlFor='name'>Country Name:</label>
             <input id='name' value={props.formState.name} onChange={props.handleChange} />

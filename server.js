@@ -27,9 +27,15 @@ app.post('/countries', async (req, res) => {
 })
 
 //update country
-
+app.put('/countries', async (req, res) => {
+    let updatedCountry = await Country.updateOne(req.body)
+    res.json(updatedCountry)
+})
 //delete country
-
+app.delete('/countries', async (req, res) => {
+    let deletedCountry = await Country.deleteOne(req.body)
+    res.json(deletedCountry)
+})
 
 
 
