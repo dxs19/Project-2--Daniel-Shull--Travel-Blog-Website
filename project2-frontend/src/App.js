@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import react from 'react'
 import { useNavigate, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Flags from './Flags'
+import CountryList from './CountryList'
+
 
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home countries={countries} handleChange={handleChange} handleSubmit={handleSubmit} formState={formState} navigate={navigate} navigateToFlags={navigateToFlags} navigateToHome={navigateToHome} />} />
-        <Route path="/flags" element={<Flags navigateToHome={navigateToHome} />} />
+        <Route path="/flags" element={<Flags navigateToHome={navigateToHome} CountryList={CountryList} />} />
 
       </Routes>
 
