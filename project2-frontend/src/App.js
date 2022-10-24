@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home countries={countries} handleChange={handleChange} handleSubmit={handleSubmit} formState={formState} navigate={navigate} navigateToFlags={navigateToFlags} navigateToHome={navigateToHome} />} />
-        <Route path="/flags" element={<Flags />} />
+        <Route path="/flags" element={<Flags navigateToHome={navigateToHome} />} />
 
       </Routes>
 

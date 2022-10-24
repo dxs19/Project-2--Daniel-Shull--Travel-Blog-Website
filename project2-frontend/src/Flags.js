@@ -1,7 +1,9 @@
 import React from "react"
-const Flags = () => {
+const Flags = (props) => {
     return (
-        <h1>this is where the countries will be </h1>
+        <div> <h1>this is where the countries will be </h1>
+            <button onClick={props.navigateToHome}>to homepage</button>
+        </div>
     )
 }
 

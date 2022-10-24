@@ -1,10 +1,9 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
 const Home = (props) => {
     return (<div >
 
         <button onClick={props.navigateToFlags}
-        ></button>
+        >to flags</button>
         <h1>Write your experience here.</h1>
         {props.countries.map((country) => (
             <div key={country._id}>
