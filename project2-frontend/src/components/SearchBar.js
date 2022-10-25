@@ -8,8 +8,9 @@ function SearchBar({ placeholder, data }) {
     const [filteredData, setfilteredData] = useState([])
     useEffect(() => {
         setfilteredData(data)
-    }, [])
-    console.log(data)
+    }, data)
+
+
     const handleFilter = (event) => {
         const searchWord = event.target.value
         const newFilter = data.filter((value) => {
