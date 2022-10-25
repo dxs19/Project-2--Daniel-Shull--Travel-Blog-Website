@@ -4,6 +4,7 @@ import { useNavigate, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Flags from './Flags'
 import CountryList from './CountryList'
+import SearchBar from './components/SearchBar'
 
 
 
@@ -53,8 +54,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home countries={countries} handleChange={handleChange} handleSubmit={handleSubmit} formState={formState} navigate={navigate} navigateToFlags={navigateToFlags} navigateToHome={navigateToHome} />} />
-        <Route path="/flags" element={<Flags navigateToHome={navigateToHome} CountryList={CountryList} countries={countries} />} />
+        <Route path="/" element={<Home countries={countries} handleChange={handleChange} handleSubmit={handleSubmit} formState={formState} navigate={navigate} navigateToFlags={navigateToFlags} navigateToHome={navigateToHome} SearchBar={SearchBar} />} />
+        <Route path="/flags" element={<Flags navigateToHome={navigateToHome} CountryList={CountryList} countries={countries} SearchBar={SearchBar} />} />
 
       </Routes>
 

@@ -1,9 +1,13 @@
 import React from "react"
+import SearchBar from "./components/SearchBar"
 const Flags = (props) => {
 
     return (<div>
         <button onClick={props.navigateToHome}>to homepage</button>
         <h1>this is where the countries will be </h1>
+        <div>
+            <SearchBar placeholder="Enter a destination" data={props.countries} />
+        </div>
         {props.CountryList.map((country) => (
             <div key={country.name} class="countries">
                 <h2>{country.name}</h2>

@@ -11,14 +11,15 @@ h1 {
   text-align: center;
 }
 
-.countries {
 
+.countries {
+  display: flex;
   border: 4px solid #333333;
   box-shadow: 10px 10px 5px #969696;
   width: 250px;
   height: 300px;
   margin: 1.5em auto;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 .country-list {
