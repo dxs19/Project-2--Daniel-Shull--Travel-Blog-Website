@@ -3,8 +3,8 @@ const Home = (props) => {
     return (<div >
 
         <button onClick={props.navigateToFlags}
-        >to flags</button>
-        <h1 >Write your experience here.</h1>
+            className="flags-button">to flags</button>
+        <h1 class='title'>Write your experience here.</h1>
 
         <h3 class="trip">Add Another Trip:</h3>
         <form onSubmit={props.handleSubmit} class="labels">

@@ -1,3 +1,28 @@
+.App {
+
+  background-image: linear-gradient(90deg, orange, yellow);
+  height: 200vh;
+
+}
+
+.homepage-button {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  height: 5vh;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 5vh;
+
+}
+
+.flags-button {
+  position: sticky;
+  top: 70vh;
+  left: 2vh;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,14 +40,22 @@ h1 {
   padding: 10px;
 }
 
+.title {
+
+  height: 60px;
+  padding: 10px;
+}
+
 .country-list {
-  display: flex;
+  display: absolute;
+  right: 30vh;
   border: 4px solid #333333;
   box-shadow: 10px 10px 5px #969696;
   width: 250px;
   height: 300px;
   margin: 1.5em auto;
   border-radius: 3px;
+
 }
 
 .country-list {
@@ -42,6 +75,7 @@ h1 {
   font-size: large;
   width: 30vh;
   padding: 3vh;
+  align-items: center;
 }
 
 .description {
