@@ -11,6 +11,9 @@ h1 {
   text-align: center;
 }
 
+.country-text {
+  padding-left: 10px;
+}
 
 .country-list {
   display: flex;

@@ -9,10 +9,6 @@ import SearchBar from './components/SearchBar'
 
 
 function App() {
-
-
-
-
   const [countries, updateCountries] = useState([])
   const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '' })
   const navigate = useNavigate()
@@ -54,8 +50,22 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home countries={countries} handleChange={handleChange} handleSubmit={handleSubmit} formState={formState} navigate={navigate} navigateToFlags={navigateToFlags} navigateToHome={navigateToHome} SearchBar={SearchBar} />} />
-        <Route path="/flags" element={<Flags navigateToHome={navigateToHome} CountryList={CountryList} countries={countries} SearchBar={SearchBar} />} />
+        <Route path="/"
+          element={<Home
+            countries={countries}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            formState={formState}
+            navigate={navigate}
+            navigateToFlags={navigateToFlags}
+            navigateToHome={navigateToHome}
+            SearchBar={SearchBar} />} />
+        <Route path="/flags"
+          element={<Flags
+            navigateToHome={navigateToHome}
+            CountryList={CountryList}
+            countries={countries}
+            SearchBar={SearchBar} />} />
 
       </Routes>
 

@@ -1,6 +1,13 @@
 import React from "react"
 import SearchBar from "./components/SearchBar"
 const Flags = (props) => {
+    // class SearchBar extends React.Component {
+    //     constructor() {
+    //         super()
+    //         this.state = {
+    //             countries
+    //         }
+    //     }
 
     return (<div>
         <button onClick={props.navigateToHome}>to homepage</button>
@@ -8,15 +15,6 @@ const Flags = (props) => {
         <div >
             <SearchBar placeholder="Enter a destination" data={props.countries} />
         </div>
-
-        {/* {
-            props.countries.map((country) => (
-                <div key={country._id} class="country-list">
-                    <h2>{country.city},{country.name}</h2>
-                </div>
-            ))
-        } */}
-
     </div>)
 }
 
