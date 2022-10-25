@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './SearchBar.css'
+import App from '../App'
 
-function SearchBar({ placeholder, data }) {
+function SearchBar({ placeholder, data, props }) {
 
 
     const [filteredData, setfilteredData] = useState([])
@@ -24,9 +25,9 @@ function SearchBar({ placeholder, data }) {
             </div>
             <div className='dataResults'>
                 {filteredData.map((value, key) => {
-                    return <a className='dataItem' key={value.id} >
-                        <p>{value.name} , {value.city}</p>
-                    </a>
+                    return <div className='country-list' href={value.id} key={value.id} target="_blank" >
+                        <div class name="country-list">{value.name}, {value.city}</div>
+                    </div>
                 })}
             </div>
         </div>
