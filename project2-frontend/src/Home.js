@@ -5,16 +5,7 @@ const Home = (props) => {
         <button onClick={props.navigateToFlags}
         >to flags</button>
         <h1 >Write your experience here.</h1>
-        {
-            props.countries.map((country) => (
-                <div key={country._id} class="country-list">
-                    <h2>{country.city},{country.name}</h2>
-                    {/* <h3>{country.price}</h3>
-                    <h3>{country.description}</h3>
-                    <h3>{country.rating}</h3> */}
-                </div>
-            ))
-        }
+
         <h3 class="trip">Add Another Trip:</h3>
         <form onSubmit={props.handleSubmit} class="labels">
             <label htmlFor='name'>Country Name:</label>
