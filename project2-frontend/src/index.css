@@ -19,8 +19,8 @@
 }
 
 .flags-button {
-  position: sticky;
-  top: 70vh;
+  position: absolute;
+  top: 90vh;
   left: 2vh;
 }
 
