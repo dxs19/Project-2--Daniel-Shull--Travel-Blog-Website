@@ -35,6 +35,7 @@ function App() {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(formState)
@@ -48,6 +49,19 @@ function App() {
     updateCountries([...countries, createNewTrip.data])
     setFormState({ name: '', city: '', price: '', description: '', rating: '', image: '' })
   }
+  const handleSubmit2 = async (event) => {
+    event.preventDefault()
+    console.log(formState)
+    let updateTrip = await axios.put('http://localhost:3001/countries', formState)
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    updateCountries([...countries, updateTrip.data])
+    setFormState({ name: '', city: '', price: '', description: '', rating: '', image: '' })
+  }
   return (
     <div className="App">
       <Routes>
@@ -56,6 +70,7 @@ function App() {
             countries={countries}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            handleSubmit2={handleSubmit2}
             formState={formState}
             navigate={navigate}
             navigateToFlags={navigateToFlags}
