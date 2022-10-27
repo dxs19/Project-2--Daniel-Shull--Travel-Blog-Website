@@ -1,7 +1,7 @@
 .App {
 
   background-image: linear-gradient(180deg, orange, yellow);
-  height: 200vh;
+  height: 1000vh;
 
 }
 
@@ -53,8 +53,8 @@ h1 {
   right: 30vh;
   border: 4px solid #333333;
   box-shadow: 10px 10px 5px #969696;
-  width: 250px;
-  height: 300px;
+  width: 20vh;
+  height: 40vh;
   margin: 1.5em auto;
   border-radius: 3px;
 
