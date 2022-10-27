@@ -11,7 +11,7 @@ import SearchBar from './components/SearchBar'
 
 function App() {
   const [countries, updateCountries] = useState([])
-  const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '', image: '' })
+  const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
   const navigate = useNavigate()
 
   const navigateToFlags = () => {
