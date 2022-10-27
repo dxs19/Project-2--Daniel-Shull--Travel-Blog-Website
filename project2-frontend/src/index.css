@@ -15,7 +15,16 @@
   width: 400px;
 }
 
+.trip {
+  align-items: center;
+}
+
 .flexbox-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flexbox-2 {
   display: flex;
   justify-content: center;
 }
@@ -132,24 +141,10 @@ h1 {
   font-size: 5vh;
 }
 
-/* .labels {
-  display: grid;
-  justify-content: center;
-  grid-column-start: 2;
-  grid-column-end: five;
-  grid-row-start: row1-start;
-  grid-row-end: 3;
-  right: 30vh;
 
-} */
 
 .country-list {
   display: grid;
-  justify-content: center;
-  grid-column-start: 2;
-  grid-column-end: five;
-  grid-row-start: row1-start;
-  grid-row-end: 3;
   right: 30vh;
   border: 4px solid #333333;
   box-shadow: 10px 10px 5px #969696;
@@ -178,7 +173,7 @@ h1 {
   display: grid;
 
   font-size: large;
-  width: 30vh;
+  width: 70vh;
   padding: 3vh;
   align-items: center;
 }

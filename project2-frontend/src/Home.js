@@ -18,8 +18,8 @@ const Home = (props) => {
             </div>
         </div>
         <h1 class='title'>Write your experience here.</h1>
-        <h3 class="trip">Add Another Trip:</h3>
-        <div >
+        <h1 class="trip">Add Another Trip:</h1>
+        <div className="flexbox-2">
             <form onSubmit={props.handleSubmit} class="labels">
                 <label htmlFor='name'>Country Name:</label>
                 <input id='name' value={props.formState.name} onChange={props.handleChange} />
