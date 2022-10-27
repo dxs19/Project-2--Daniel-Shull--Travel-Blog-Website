@@ -35,6 +35,49 @@ body {
   color: rgb(43, 36, 36);
 }
 
+.main-title {
+  color: whitesmoke;
+}
+
+.homepage-images {
+
+  display: grid;
+  grid-template-areas:
+    '.top .top .top'
+    '.bottom-left .bottom-middle .bottom-right';
+  gap: 3vmin;
+  padding: 1px;
+  height: 100vh
+}
+
+.top {
+  max-width: 70vh;
+  max-height: 70vh;
+  padding-right: 70vh;
+  padding-left: 40vh;
+}
+
+.bottom-left {
+  padding: 4vh;
+  max-width: 40vh;
+  max-height: 30vh;
+}
+
+.bottom-middle {
+  padding: 4vh;
+  max-width: 40vh;
+  max-height: 30vh;
+}
+
+.bottom-right {
+  padding: 4vh;
+  max-width: 40vh;
+  max-height: 30vh;
+}
+
+
+
+
 h1 {
   text-align: center;
 }

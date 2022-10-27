@@ -4,13 +4,18 @@ const Home = (props) => {
 
         <button onClick={props.navigateToFlags}
             className="flags-button">to flags</button>
-        <h1 class='title'>Write your experience here.</h1>
-        <div class="homepage-images" > <img class="top" src="https://cdn.pixabay.com/photo/2017/06/05/11/01/airport-2373727__480.jpg" ></img>
-            <img class="bottom-right" src="https://cdn.pixabay.com/photo/2014/11/13/23/34/palace-530055__480.jpg"></img>
-            <img class="bottom-middle" src="https://cdn.pixabay.com/photo/2018/08/19/10/16/nature-3616194__480.jpg"></img>
-            <img class="bottom-right" src="https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014619__480.jpg"></img>
+        <h1 class='main-title'>Travel Blog Website.</h1>
+        <div class="homepage-images" >
+            <div className="Menu">
+                <ul>
+                    <img class="top" src="https://cdn.pixabay.com/photo/2017/06/05/11/01/airport-2373727__480.jpg" ></img>
+                    <img class="bottom-left" src="https://cdn.pixabay.com/photo/2014/11/13/23/34/palace-530055__480.jpg"></img>
+                    <img class="bottom-middle" src="https://cdn.pixabay.com/photo/2018/08/19/10/16/nature-3616194__480.jpg"></img>
+                    <img class="bottom-right" src="https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014619__480.jpg"></img>
+                </ul>
+            </div>
         </div>
-
+        <h1 class='title'>Write your experience here.</h1>
         <h3 class="trip">Add Another Trip:</h3>
         <form onSubmit={props.handleSubmit} class="labels">
             <label htmlFor='name'>Country Name:</label>
