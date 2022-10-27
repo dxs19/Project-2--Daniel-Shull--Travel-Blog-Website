@@ -36,6 +36,7 @@ function SearchBar({ placeholder, data }) {
                             <h3>Price: {value.price}</h3>
                             <h3>Rating: {value.rating}</h3>
                             <h5>Description: {value.description}</h5>
+                            <img src={value.url} />
                         </div>
 
 

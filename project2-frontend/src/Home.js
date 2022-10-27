@@ -18,6 +18,8 @@ const Home = (props) => {
             <input id='description' class="description" value={props.formState.description} onChange={props.handleChange} />
             <label htmlFor='rating'>Rating:</label>
             <input id='rating' value={props.formState.rating} onChange={props.handleChange} />
+            <label htmlFor='url'>Image:</label>
+            <input id='url' value={props.formState.image} onChange={props.handleChange} />
             <button type='submit' class="trip-button">Add Trip</button>
         </form>
     </div >

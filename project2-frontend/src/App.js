@@ -11,7 +11,7 @@ import SearchBar from './components/SearchBar'
 
 function App() {
   const [countries, updateCountries] = useState([])
-  const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '' })
+  const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '', image: '' })
   const navigate = useNavigate()
 
   const navigateToFlags = () => {
@@ -46,7 +46,7 @@ function App() {
         console.log(error);
       })
     updateCountries([...countries, createNewTrip.data])
-    setFormState({ name: '', city: '', price: '', description: '', rating: '' })
+    setFormState({ name: '', city: '', price: '', description: '', rating: '', image: '' })
   }
   return (
     <div className="App">

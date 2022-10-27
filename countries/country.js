@@ -7,6 +7,7 @@ const countrySchema = new Schema(
         price: { type: String, required: true },
         description: { type: String },
         rating: { type: String, required: true },
+        url: { type: String }
     },
     { timestamps: true }
 )
