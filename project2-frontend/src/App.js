@@ -5,6 +5,7 @@ import Home from './Home'
 import Flags from './Flags'
 import CountryList from './CountryList'
 import SearchBar from './components/SearchBar'
+// import Pictures from './components/Pictures'
 
 
 
