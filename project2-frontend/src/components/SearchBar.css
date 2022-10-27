@@ -34,12 +34,8 @@
     padding: 10px;
     background-image: orange;
     height: 10vh;
-
-
-
+    align-items: center;
 }
-
-
 
 
 .searchInputs {
