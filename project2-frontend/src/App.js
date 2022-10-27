@@ -5,6 +5,7 @@ import Home from './Home'
 import Flags from './Flags'
 import CountryList from './CountryList'
 import SearchBar from './components/SearchBar'
+
 // import Pictures from './components/Pictures'
 
 
@@ -12,6 +13,7 @@ import SearchBar from './components/SearchBar'
 function App() {
   const [countries, updateCountries] = useState([])
   const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
+  const [id, setID] = useState(null)
   const navigate = useNavigate()
 
   const navigateToFlags = () => {
@@ -21,7 +23,17 @@ function App() {
     navigate('/')
   }
 
+  useEffect(() => {
+    const apiCall = async () => {
+      let response = await axios.put('http://localhost:3001/countries')
+      setID(response.data)
 
+    }
+    apiCall()
+  }, [])
+
+  //   setID(localStorage.getItem('_id'))
+  // }, [])
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get('http://localhost:3001/countries')
@@ -34,6 +46,13 @@ function App() {
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
+
+  // const setData = (data) => {
+  //   console.log(data)
+  //   handleSubmit = () => setData(data)
+  // }
+
+
 
 
   const handleSubmit = async (event) => {
@@ -61,13 +80,32 @@ function App() {
       })
     updateCountries([...countries, updateTrip.data])
     setFormState({ name: '', city: '', price: '', description: '', rating: '', image: '' })
+
+
+    ////Deleting////
+    const getData = () => {
+      axios.get(`http://localhost:3001/countries`)
+        .then((getData) => {
+          setAPIData(getData.data);
+        })
+    }
+    const onDelete = (id) => {
+      axios.delete(`http://localhost:3001/countries/${id}`)
+        .then(() => {
+          getData();
+        })
+    }
+
+
   }
+
   return (
     <div className="App">
       <Routes>
         <Route path="/"
           element={<Home
             countries={countries}
+            // setData={setData}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             handleSubmit2={handleSubmit2}

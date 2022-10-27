@@ -34,6 +34,8 @@ const Home = (props) => {
                 <label htmlFor='url'>Image:</label>
                 <input id='url' value={props.formState.image} onChange={props.handleChange} />
                 <button type='submit' class="trip-button">Add Trip</button>
+                <input id='_id' value={props.formState._id} onChange={props.handleChange} />
+                <button type='submit' class="trip-button">Update Trip</button>
             </form>
             <form onSubmit={props.handleSubmit2} class="labels">
                 <label htmlFor='name'> Update Country Name:</label>
@@ -48,8 +50,11 @@ const Home = (props) => {
                 <input id='rating' value={props.formState.rating} onChange={props.handleChange} />
                 <label htmlFor='url'>Update Image:</label>
                 <input id='url' value={props.formState.image} onChange={props.handleChange} />
+                <label htmlFor='url'>Update ID:</label>
+                <input id='_id' value={props.formState._id} onChange={props.handleChange} />
                 <button type='submit' class="trip-button">Update Trip</button>
             </form>
+            <button>Delete Button</button>
 
         </div>
     </div >
