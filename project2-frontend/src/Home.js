@@ -34,27 +34,10 @@ const Home = (props) => {
                 <label htmlFor='url'>Image:</label>
                 <input id='url' value={props.formState.image} onChange={props.handleChange} />
                 <button type='submit' class="trip-button">Add Trip</button>
-                <input id='_id' value={props.formState._id} onChange={props.handleChange} />
-                <button type='submit' class="trip-button">Update Trip</button>
             </form>
-            <form onSubmit={props.handleSubmit2} class="labels">
-                <label htmlFor='name'> Update Country Name:</label>
-                <input id='name' value={props.formState.name} onChange={props.handleChange} />
-                <label htmlFor='city'>Update City:</label>
-                <input id='city' value={props.formState.city} onChange={props.handleChange} />
-                <label htmlFor='price'>Update Price of Trip:</label>
-                <input id='price' value={props.formState.price} onChange={props.handleChange} />
-                <label htmlFor='description'>Update Description of Trip:</label>
-                <input id='description' class="description" value={props.formState.description} onChange={props.handleChange} />
-                <label htmlFor='rating'>Update Rating:</label>
-                <input id='rating' value={props.formState.rating} onChange={props.handleChange} />
-                <label htmlFor='url'>Update Image:</label>
-                <input id='url' value={props.formState.image} onChange={props.handleChange} />
-                <label htmlFor='url'>Update ID:</label>
-                <input id='_id' value={props.formState._id} onChange={props.handleChange} />
-                <button type='submit' class="trip-button">Update Trip</button>
-            </form>
-            <button>Delete Button</button>
+
+
+
 
         </div>
     </div >
