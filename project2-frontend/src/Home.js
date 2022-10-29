@@ -35,6 +35,21 @@ const Home = (props) => {
                 <input id='url' value={props.formState.image} onChange={props.handleChange} />
                 <button type='submit' class="trip-button">Add Trip</button>
             </form>
+            {/* <form onSubmit={props.handleUpdate} class="labels">
+                <label htmlFor='name'>Country Name:</label>
+                <input id='name' value={props.formState.country} onChange={props.handleChange} />
+                <label htmlFor='city'>City:</label>
+                <input id='city' value={props.formState.town} onChange={props.handleChange} />
+                <label htmlFor='price'>Price of Trip:</label>
+                <input id='price' value={props.formState.money} onChange={props.handleChange} />
+                <label htmlFor='description'>Description of Trip:</label>
+                <input id='description' class="description" value={props.formState.describe} onChange={props.handleChange} />
+                <label htmlFor='rating'>Rating:</label>
+                <input id='rating' value={props.formState.rate} onChange={props.handleChange} />
+                <label htmlFor='url'>Image:</label>
+                <input id='url' value={props.formState.picture} onChange={props.handleChange} />
+                <button type='submit' class="trip-button">update Trip</button>
+            </form> */}
 
 
 

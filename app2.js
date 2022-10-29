@@ -4,11 +4,13 @@ import {
     Switch,
     Route,
     Redirect,
+    Link
 } from "react-router-dom";
 
 
 import App from "./src/App.js";
 import Flags from "./src/Flags.js";
+import CountryDetails from "./project2-frontend/src/CountryDetails.js";
 
 
 function App() {

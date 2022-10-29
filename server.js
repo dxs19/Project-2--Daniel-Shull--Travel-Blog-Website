@@ -20,7 +20,11 @@ app.get('/countries', async (req, res) => {
     let allCountries = await Country.find({})
     res.json(allCountries)
 })
-
+//git route for single country
+app.get('/countries/:id', async (req, res) => {
+    let country = await Country.findById(req.params.id)
+    res.json(country)
+})
 // create country
 app.post('/countries', async (req, res) => {
     let createdCountry = await Country.create(req.body)
@@ -28,8 +32,10 @@ app.post('/countries', async (req, res) => {
 })
 
 //update country
-app.put('/countries', async (req, res) => {
-    let updatedCountry = await Country.updateOne(req.body)
+app.put('/countries/:id', async (req, res) => {
+    let updatedCountry = await Country.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    })
     res.json(updatedCountry)
 })
 //delete country
