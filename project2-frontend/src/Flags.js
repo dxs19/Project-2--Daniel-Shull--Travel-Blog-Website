@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom"
 const Flags = (props) => {
     let navigate = useNavigate()
 
-    const showCountry = (countries) => {
-        navigate(`${countries.id}`)
+    const showCountry = (props) => {
+        navigate(`${props.countries.id}`)
+
     }
     return (<div>
         <button onClick={props.navigateToHome} className="homepage-button">Back To Homepage</button>

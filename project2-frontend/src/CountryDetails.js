@@ -2,29 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const CountryDetails = (props) => {
-    const [countries, setCountry] = useState('')
+    const [country, setCountry] = useState('')
     let { id } = useParams()
+    console.log(id)
+
     useEffect(() => {
         let selectedBoat = props.countries.find(
-            countries => countries.id === parseInt(id)
+            (country) => country.id === parseInt(id)
         )
         setCountry(selectedBoat)
     }, [props.countries, id])
-
-    // const [country, setCountry] = useState('')
-    // useEffect(() => {
-
-    // }, [])
+    return (
+        <h1>This is the details page</h1>
+    )
 }
-// let { id } = useParams()
-// useEffect(props) => {
-//     let selectedCountry = props.boat.find(
-//         (countries) => country.id === parseInt(id)
-//     )
-//     setBoat(selectedBoat)
-// }, [props.countries, id]
 
-// )
 
 
 export default CountryDetails

@@ -29,7 +29,7 @@ function App() {
             props we passes the imported component*/}
                     <Route path="/Flags" component={Flags} />
 
-
+                    <Route path="/Flags/:id" component={Flags} />
                     {/* If any route mismatches the upper 
             route endpoints then, redirect triggers 
             and redirects app to home component with to="/" */}
