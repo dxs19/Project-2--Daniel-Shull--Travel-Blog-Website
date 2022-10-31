@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const PORT = process.env.PORT || 3001
 const db = require('./db')
-const { Country } = require('./countries')
+const { Country } = require('./project2-frontend/src/countries')
 const { Image } = require('./images')
 const app = express()
 
@@ -39,10 +39,12 @@ app.put('/countries/:id', async (req, res) => {
     res.json(updatedCountry)
 })
 //delete country
-app.delete('/countries', async (req, res) => {
-    let deletedCountry = await Country.deleteOne(req.body)
-    res.json(deletedCountry)
+app.delete('/countries/:id', (req, res) => {
+    res.send('reached this server')
+    // let deletedCountry = await Country.findByIdAndRemove(req.params.id, req.body)
+    // res.json(deletedCountry)
 })
+
 
 //Image Routes
 //Get

@@ -7,6 +7,9 @@ import CountryList from './CountryList'
 import SearchBar from './components/SearchBar'
 import { useParams } from 'react-router-dom'
 import CountryDetails from './CountryDetails'
+// import { index } from './countries/country'
+
+
 
 
 
@@ -23,9 +26,23 @@ function App() {
     navigate('/')
   }
   const navigateToDetails = () => {
-    navigate('/countries/:id')
+    navigate('/flags/:id')
   }
 
+  const handleClick = (event) => {
+
+    countries.map((value, key) => {
+      return (
+        <div className='country-details' key={countries.id} target="_blank">
+          {value.name}
+          <button onClick={() => countries.showId(key)}>Show Id</button>
+          {value.showId &&
+            countries.renderId()}
+
+        </div>
+      )
+    })
+  }
 
 
 
@@ -92,7 +109,7 @@ function App() {
           element={<CountryDetails
             countries={countries} />} />
       </Routes>
-
+      <button onClick={() => countries.showId(key)} >Click</button>
 
     </div >
   );

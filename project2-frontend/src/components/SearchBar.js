@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './SearchBar.css'
 import App from '../App'
+import { useNavigate } from 'react-router-dom'
 
 function SearchBar({ placeholder, data }) {
 
@@ -18,9 +19,11 @@ function SearchBar({ placeholder, data }) {
             )
 
         })
-        setfilteredData(newFilter)
+
     }
+
     return (
+
         <div className='search'>
             <div className="searchInputs"> </div>
             <div className='dataResults'>
@@ -38,8 +41,6 @@ function SearchBar({ placeholder, data }) {
                             <h5>Description: {value.description}</h5>
                             <img src={value.url} />
                         </div>
-
-
                     </div>
                 })}
             </div>
