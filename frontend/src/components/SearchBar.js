@@ -37,7 +37,7 @@ function SearchBar({ placeholder, data }) {
             </div>
             <div className='dataResults'>
                 {filteredData.map((value, key) => {
-                    return <div onClick={() => showCountry(value._id)} className='country-list' key={value.id} target="_blank" >
+                    return <div onClick={() => showCountry(value._id)} className='country-list' key={value._id} target="_blank" >
                         <div className='country-text'>
                             <h2>{value.city}, {value.name}</h2>
                             <h3>Price: {value.price}</h3>
