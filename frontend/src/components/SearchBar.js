@@ -21,7 +21,11 @@ function SearchBar({ placeholder, data }) {
         })
 
     }
+    let navigate = useNavigate()
 
+    const showCountry = (id) => {
+        navigate(`${id}`)
+    }
     return (
 
         <div className='search'>
@@ -33,7 +37,7 @@ function SearchBar({ placeholder, data }) {
             </div>
             <div className='dataResults'>
                 {filteredData.map((value, key) => {
-                    return <div className='country-list' href={value.id} key={value.id} target="_blank" >
+                    return <div onClick={() => showCountry(value._id)} className='country-list' key={value.id} target="_blank" >
                         <div className='country-text'>
                             <h2>{value.city}, {value.name}</h2>
                             <h3>Price: {value.price}</h3>

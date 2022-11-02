@@ -19,7 +19,6 @@ const Flags = (props) => {
         <div >
             <SearchBar placeholder="Enter a destination" data={props.countries} />
             <button onClick={props.navigateToDetails} name='to-details' ></button>
-            <Routes><Route path="/flags/:id"></Route></Routes>
         </div>
 
     </div>)

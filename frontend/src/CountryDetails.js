@@ -7,10 +7,10 @@ const CountryDetails = (props) => {
     console.log(id)
 
     useEffect(() => {
-        let selectedBoat = props.countries.find(
+        let selectedCountry = props.countries.find(
             (country) => country.id === parseInt(id)
         )
-        setCountry(selectedBoat)
+        setCountry(selectedCountry)
     }, [props.countries, id])
     return (
         <h1>This is the details page</h1>

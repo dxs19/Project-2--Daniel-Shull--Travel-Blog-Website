@@ -17,7 +17,7 @@ function App() {
   const [countries, updateCountries] = useState([])
   const [formState, setFormState] = useState({ name: '', country: '', city: '', town: '', price: '', money: '', description: '', describe: '', rating: '', rate: '', url: '', picture: '' })
   let { id } = useParams()
-  const navigate = useNavigate()
+  let navigate = useNavigate()
 
   const navigateToFlags = () => {
     navigate('/flags')
@@ -25,23 +25,15 @@ function App() {
   const navigateToHome = () => {
     navigate('/')
   }
-  const navigateToDetails = () => {
-    navigate('/flags/:id')
+  const getTripDetails = (id) => {
+    navigate(`/flags/${id}`)
   }
+
+
+
 
   const handleClick = (event) => {
 
-    countries.map((value, key) => {
-      return (
-        <div className='country-details' key={countries.id} target="_blank">
-          {value.name}
-          <button onClick={() => countries.showId(key)}>Show Id</button>
-          {value.showId &&
-            countries.renderId()}
-
-        </div>
-      )
-    })
   }
 
 
@@ -109,7 +101,7 @@ function App() {
           element={<CountryDetails
             countries={countries} />} />
       </Routes>
-      <button onClick={() => countries.showId(key)} >Click</button>
+
 
     </div >
   );

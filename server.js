@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const PORT = process.env.PORT || 3001
 const db = require('./db')
-const { Country } = require('./project2-frontend/src/countries')
+const { Country } = require('./models')
 const { Image } = require('./images')
 const app = express()
 
@@ -73,4 +73,3 @@ app.delete('/images', async (req, res) => {
 app.listen(PORT, () => [
     console.log(`Express server is running:${PORT}`)
 ])
-
