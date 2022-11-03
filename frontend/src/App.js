@@ -15,7 +15,7 @@ import CountryDetails from './CountryDetails'
 
 function App() {
   const [countries, updateCountries] = useState([])
-  const [formState, setFormState] = useState({ name: '', country: '', city: '', town: '', price: '', money: '', description: '', describe: '', rating: '', rate: '', url: '', picture: '' })
+  const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
   let { id } = useParams()
   let navigate = useNavigate()
 
@@ -65,14 +65,14 @@ function App() {
         console.log(error);
       })
     updateCountries([...countries, createNewTrip.data])
-    setFormState({ name: '', city: '', price: '', description: '', rating: '', image: '' })
+    setFormState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
   }
 
-  const handleUpdate = async (event) => {
+  const handleUpdate = async (event, id) => {
     event.preventDefault()
     let response = await axios.put(`http://localhost:3001/countries/${id}`, formState)
     updateCountries([countries, response])
-    setFormState({ country: '', town: '', money: '', describe: '', rate: '', picture: '' })
+    setFormState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
   }
 
 
@@ -99,7 +99,11 @@ function App() {
             SearchBar={SearchBar} />} />
         <Route path="/flags/:id"
           element={<CountryDetails
-            countries={countries} />} />
+            countries={countries}
+            handleUpdate={handleUpdate}
+            formState={formState}
+            handleChange={handleChange}
+          />} />
       </Routes>
 
 

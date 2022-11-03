@@ -33,6 +33,7 @@ app.post('/countries', async (req, res) => {
 
 //update country
 app.put('/countries/:id', async (req, res) => {
+    console.log(req.body)
     let updatedCountry = await Country.findByIdAndUpdate(req.params.id, req.body, {
         new: true
     })
@@ -41,6 +42,7 @@ app.put('/countries/:id', async (req, res) => {
 //delete country
 app.delete('/countries/:id', (req, res) => {
     res.send('reached this server')
+
     // let deletedCountry = await Country.findByIdAndRemove(req.params.id, req.body)
     // res.json(deletedCountry)
 })

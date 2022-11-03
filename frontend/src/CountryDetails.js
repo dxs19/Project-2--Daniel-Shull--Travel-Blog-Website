@@ -22,11 +22,25 @@ const CountryDetails = (props) => {
             <h1>{country.city}, {country.name}</h1>
             <img src={country.url} />
             <h2>{country.price}</h2>
-            <h3>{country.rating}</h3>
             <h3>{country.description}</h3>
             <h3>{country.rating}</h3>
-
-            <h1></h1>
+            <div>
+                <form onSubmit={(event) => { props.handleUpdate(event, country._id) }} class="labels">
+                    <label htmlFor='name'>Country Name:</label>
+                    <input id='name' value={props.formState.name} onChange={props.handleChange} />
+                    <label htmlFor='city'>City:</label>
+                    <input id='city' value={props.formState.city} onChange={props.handleChange} />
+                    <label htmlFor='price'>Price of Trip:</label>
+                    <input id='price' value={props.formState.price} onChange={props.handleChange} />
+                    <label htmlFor='description'>Description of Trip:</label>
+                    <input id='description' class="description" value={props.formState.description} onChange={props.handleChange} />
+                    <label htmlFor='rating'>Rating:</label>
+                    <input id='rating' value={props.formState.rating} onChange={props.handleChange} />
+                    <label htmlFor='url'>Image:</label>
+                    <input id='url' value={props.formState.url} onChange={props.handleChange} />
+                    <button type='submit' class="trip-button">update Trip</button>
+                </form>
+            </div>
         </div>
     )
 }
