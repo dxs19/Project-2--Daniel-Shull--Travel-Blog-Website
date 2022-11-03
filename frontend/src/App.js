@@ -32,9 +32,6 @@ function App() {
 
 
 
-  const handleClick = (event) => {
-
-  }
 
 
 
@@ -68,6 +65,10 @@ function App() {
     setFormState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
   }
 
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:3001/countries/${id}`)
+    navigate('/')
+  }
   const handleUpdate = async (event, id) => {
     event.preventDefault()
     let response = await axios.put(`http://localhost:3001/countries/${id}`, formState)
@@ -103,6 +104,7 @@ function App() {
             handleUpdate={handleUpdate}
             formState={formState}
             handleChange={handleChange}
+            handleDelete={handleDelete}
           />} />
       </Routes>
 

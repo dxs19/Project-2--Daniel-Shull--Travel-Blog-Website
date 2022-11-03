@@ -40,11 +40,9 @@ app.put('/countries/:id', async (req, res) => {
     res.json(updatedCountry)
 })
 //delete country
-app.delete('/countries/:id', (req, res) => {
-    res.send('reached this server')
-
-    // let deletedCountry = await Country.findByIdAndRemove(req.params.id, req.body)
-    // res.json(deletedCountry)
+app.delete('/countries/:id', async (req, res) => {
+    let deletedCountry = await Country.findByIdAndDelete(req.params.id, req.body)
+    res.json(deletedCountry)
 })
 
 

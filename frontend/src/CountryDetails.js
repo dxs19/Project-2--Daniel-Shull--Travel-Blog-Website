@@ -38,8 +38,9 @@ const CountryDetails = (props) => {
                     <input id='rating' value={props.formState.rating} onChange={props.handleChange} />
                     <label htmlFor='url'>Image:</label>
                     <input id='url' value={props.formState.url} onChange={props.handleChange} />
-                    <button type='submit' class="trip-button">update Trip</button>
+                    <button type='submit' class="trip-button">Update Trip</button>
                 </form>
+                <button onClick={() => props.handleDelete(country._id)} className="delete-btn"> Delete</button>
             </div>
         </div>
     )
