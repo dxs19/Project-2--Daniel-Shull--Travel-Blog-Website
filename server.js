@@ -3,7 +3,7 @@ const cors = require('cors')
 const PORT = process.env.PORT || 3001
 const db = require('./db')
 const { Country } = require('./models')
-const { Image } = require('./images')
+const { Image } = require('./models/images')
 const app = express()
 
 app.get('/', (req, res) => {
@@ -51,24 +51,8 @@ app.delete('/countries/:id', async (req, res) => {
 app.get('/images', async (req, res) => {
     let allImages = await Image.find({})
     res.json(allImages)
-    res.send('reached images server')
 })
 
-app.post('/images', async (req, res) => {
-    let createdImage = await Image.create(req.body)
-    res.send(createdImage)
-})
-
-//update image
-app.put('/images', async (req, res) => {
-    let updatedImage = await Image.updateOne(req.body)
-    res.json(updatedImage)
-})
-//delete image
-app.delete('/images', async (req, res) => {
-    let deletedImage = await Image.deleteOne(req.body)
-    res.json(deletedImage)
-})
 
 app.listen(PORT, () => [
     console.log(`Express server is running:${PORT}`)

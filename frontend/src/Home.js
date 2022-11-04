@@ -35,7 +35,8 @@ const Home = (props) => {
                 <input id='url' value={props.formState.image} onChange={props.handleChange} />
                 <button type='submit' class="trip-button">Add Trip</button>
             </form>
-
+            <div><h1>Some photos from other trips:</h1>
+            </div>
 
 
 

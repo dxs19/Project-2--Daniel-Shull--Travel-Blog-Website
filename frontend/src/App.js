@@ -15,6 +15,7 @@ import CountryDetails from './CountryDetails'
 
 function App() {
   const [countries, updateCountries] = useState([])
+  const [images, getImages] = useState([])
   const [formState, setFormState] = useState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
   let { id } = useParams()
   let navigate = useNavigate()
@@ -44,7 +45,14 @@ function App() {
     apiCall()
   }, [])
 
-
+  useEffect(() => {
+    const imageCall = async () => {
+      let response = await axios.get('http://localhost:3001/images')
+      console.log(response.data)
+      getImages(response.data)
+    }
+    imageCall()
+  }, [])
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
