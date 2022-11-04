@@ -32,19 +32,6 @@ function App() {
 
 
 
-
-
-
-
-  useEffect(() => {
-    const apiCall = async () => {
-      let response = await axios.get(`http://localhost:3001/countries`)
-      updateCountries(response.data)
-
-    }
-    apiCall()
-  }, [])
-
   useEffect(() => {
     const imageCall = async () => {
       let response = await axios.get('http://localhost:3001/images')
@@ -52,6 +39,12 @@ function App() {
       getImages(response.data)
     }
     imageCall()
+    const apiCall = async () => {
+      let response = await axios.get(`http://localhost:3001/countries`)
+      updateCountries(response.data)
+
+    }
+    apiCall()
   }, [])
 
   const handleChange = (event) => {

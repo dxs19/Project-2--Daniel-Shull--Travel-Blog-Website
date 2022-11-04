@@ -38,8 +38,10 @@ const Home = (props) => {
         </div>
         <h1>Some photos from other trips:</h1>
         <div>
+            {props.images.map((image) => (
+                <img src={image.url}></img>
+            ))}
 
-            <img src={props.images}></img>
         </div>
     </div >
     )
