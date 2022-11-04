@@ -9,7 +9,7 @@ const CountryDetails = (props) => {
     useEffect(() => {
         const detailsCall = async () => {
 
-            await axios.get(`http://localhost:3001/countries/${id}`).then
+            await axios.get(`/api/countries/${id}`).then
                 ((res) => { setCountry(res.data) })
 
         }

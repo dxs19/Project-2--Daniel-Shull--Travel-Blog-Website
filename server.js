@@ -6,9 +6,7 @@ const { Country } = require('./models')
 const { Image } = require('./models/images')
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send({ msg: "This route is being hit" })
-})
+
 //middleware
 app.use(express.json())
 app.use(cors())
@@ -17,23 +15,23 @@ app.use(express.static(`${__dirname}/frontend/build`))
 
 //Country Routes
 //read all brands ---> GET
-app.get('/countries', async (req, res) => {
+app.get('/api/countries', async (req, res) => {
     let allCountries = await Country.find({})
     res.json(allCountries)
 })
 //git route for single country
-app.get('/countries/:id', async (req, res) => {
+app.get('/api/countries/:id', async (req, res) => {
     let country = await Country.findById(req.params.id)
     res.json(country)
 })
 // create country
-app.post('/countries', async (req, res) => {
+app.post('/api/countries', async (req, res) => {
     let createdCountry = await Country.create(req.body)
     res.send(createdCountry)
 })
 
 //update country
-app.put('/countries/:id', async (req, res) => {
+app.put('/api/countries/:id', async (req, res) => {
     console.log(req.body)
     let updatedCountry = await Country.findByIdAndUpdate(req.params.id, req.body, {
         new: true
@@ -41,7 +39,7 @@ app.put('/countries/:id', async (req, res) => {
     res.json(updatedCountry)
 })
 //delete country
-app.delete('/countries/:id', async (req, res) => {
+app.delete('/api/countries/:id', async (req, res) => {
     let deletedCountry = await Country.findByIdAndDelete(req.params.id, req.body)
     res.json(deletedCountry)
 })
@@ -49,7 +47,7 @@ app.delete('/countries/:id', async (req, res) => {
 
 //Image Routes
 //Get
-app.get('/images', async (req, res) => {
+app.get('/api/images', async (req, res) => {
     let allImages = await Image.find({})
     res.json(allImages)
 })

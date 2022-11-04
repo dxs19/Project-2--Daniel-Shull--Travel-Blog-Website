@@ -34,13 +34,13 @@ function App() {
 
   useEffect(() => {
     const imageCall = async () => {
-      let response = await axios.get('http://localhost:3001/images')
+      let response = await axios.get('/api/images')
       console.log(response.data)
       getImages(response.data)
     }
     imageCall()
     const apiCall = async () => {
-      let response = await axios.get(`http://localhost:3001/countries`)
+      let response = await axios.get(`/api/countries`)
       updateCountries(response.data)
 
     }
@@ -55,7 +55,7 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(formState)
-    let createNewTrip = await axios.post(`http://localhost:3001/countries`, formState)
+    let createNewTrip = await axios.post(`/api/countries`, formState)
       .then((response) => {
         return response;
       })
@@ -67,12 +67,12 @@ function App() {
   }
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3001/countries/${id}`)
+    await axios.delete(`/api/countries/${id}`)
     navigate('/')
   }
   const handleUpdate = async (event, id) => {
     event.preventDefault()
-    let response = await axios.put(`http://localhost:3001/countries/${id}`, formState)
+    let response = await axios.put(`/api/countries/${id}`, formState)
     updateCountries([countries, response])
     setFormState({ name: '', city: '', price: '', description: '', rating: '', url: '' })
   }
