@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 //middleware
 app.use(express.json())
 app.use(cors())
+app.use(express.static(`${__dirname}/frontend/build`))
 
 
 //Country Routes
@@ -53,6 +54,9 @@ app.get('/images', async (req, res) => {
     res.json(allImages)
 })
 
+app.get('/*', (req, res) => {
+    res.sendFile(`${__dirname}/frontend/build/index.html`)
+})
 
 app.listen(PORT, () => [
     console.log(`Express server is running:${PORT}`)

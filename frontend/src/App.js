@@ -91,6 +91,7 @@ function App() {
         <Route path="/"
           element={<Home
             countries={countries}
+            images={images}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             formState={formState}
